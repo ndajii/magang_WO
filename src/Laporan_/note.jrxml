@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="540" pageHeight="500" orientation="Landscape" columnWidth="500" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bec199db-61ba-4b0f-8141-f1317aba8f2f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Isi" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from tb_bayar where dbkodeksm = $P{Isi}]]>
+	</queryString>
+	<field name="dbtanggal" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dbkodeksm" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dbnamaksm" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dbharga" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dbbayar" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dbket" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dbsisa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="353" height="79" uuid="5346c349-9baf-402e-af9d-7420bfb579d7"/>
+				<imageExpression><![CDATA["C:\\Users\\daru\\Documents\\WEDDING ORGANIZER\\WEDDING ORGANIZER\\src\\Laporan_\\lap.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="94" y="11" width="134" height="20" uuid="1c17656b-bc5c-4e3c-b53d-e321740874ec"/>
+				<textElement textAlignment="Justified">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOTA PEMBAYARAN]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="139" height="20" uuid="e676e22b-7851-4cbe-8057-3d7f41ded4e2"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[TANGGAL RESERVASI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="0" width="89" height="20" uuid="d031e520-da1c-4718-89ce-7a41f246bcfd"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[KODE KLIEN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="228" y="0" width="114" height="20" uuid="d5cffa3f-1e95-4564-b68f-dad1810451e1"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[NAMA KLIEN]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="20" width="500" height="1" uuid="ed4ce82b-0d59-4e88-89da-670e6407d754"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="78" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="0" width="139" height="20" uuid="0f758926-b482-4920-9ac5-1503595703ea"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dbtanggal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="139" y="0" width="89" height="20" uuid="fcb427fd-46fa-45e9-9ef8-d3ac7a1077d2"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dbkodeksm}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="228" y="0" width="114" height="20" uuid="77bec0d9-094a-4e15-bd9a-a32417322542"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dbnamaksm}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0">
+				<reportElement x="342" y="20" width="133" height="20" uuid="a5c3faed-79f6-46ea-983d-67658a250d65"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dbharga}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0">
+				<reportElement x="342" y="58" width="133" height="20" uuid="dc0dc936-8910-4c89-8f0b-590739619445"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dbbayar}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="28" width="129" height="20" uuid="e851aa40-879f-4989-8ed0-b0bfff17c28b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[HARGA RESERVASI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="58" width="114" height="20" uuid="c8f983ad-3aa7-4848-b277-aae3e3f4d127"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[DIBAYAR]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="78" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="11" width="114" height="20" uuid="ae00ce80-5e84-4ca2-b82f-0df2be417871"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[TERSISA]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0">
+				<reportElement x="342" y="11" width="133" height="20" uuid="c7f5e767-c10b-4fcc-88fb-466c1e2b2cf0"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dbsisa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="114" y="37" width="114" height="20" uuid="f64b5d9c-098d-4e5d-ba1e-57e61bdddf84"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[KETERANGAN]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="342" y="37" width="114" height="20" uuid="09295857-24db-4a82-8514-dfb0d923f03e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dbket}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="6" width="500" height="1" uuid="52b42e0b-4d8f-42f4-b3a1-0fd56cf4c5dc"/>
+			</line>
+			<line>
+				<reportElement x="0" y="36" width="500" height="1" uuid="25056a94-c8d4-4ebd-b985-4050ed2cad8a"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="90" splitType="Stretch">
+			<staticText>
+				<reportElement x="397" y="0" width="43" height="20" uuid="90e0dd20-994c-4228-ba94-a67915e52461"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Admin,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="397" y="70" width="43" height="20" uuid="b716c543-6fcd-4192-aaeb-c897b58111c1"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="440" y="70" width="100" height="20" uuid="e46d07ef-13ff-496e-8d23-4a41d5404aad"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="407" y="16" width="93" height="54" uuid="a7cf0b97-7171-4949-98cc-3256d1ce9218"/>
+				<imageExpression><![CDATA["C:\\Users\\daru\\Documents\\WEDDING ORGANIZER\\WEDDING ORGANIZER\\src\\Laporan_\\ttd.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="83" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="20" width="500" height="1" uuid="0c3d8fd8-0803-4504-b921-a3df870e1b9f"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

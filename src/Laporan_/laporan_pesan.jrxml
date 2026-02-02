@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="860" pageHeight="595" orientation="Landscape" columnWidth="820" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7133f32c-f935-47a9-9540-e3a22319c474">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from tb_pesanan]]>
+	</queryString>
+	<field name="dbtanggal" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dbkodeksm" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dbnamaksm" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dbcath" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dbdekor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dbmua" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dbjumlah" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="695" y="59" width="125" height="20" uuid="3151c074-fbfb-44b5-af1f-480ffe2cb8d3"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="0" width="353" height="79" uuid="1f3d6fc4-9398-408f-92ce-e746797addda"/>
+				<imageExpression><![CDATA["C:\\Users\\daru\\Documents\\WEDDING ORGANIZER\\WEDDING ORGANIZER\\src\\Laporan_\\lap.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="48" splitType="Stretch">
+			<staticText>
+				<reportElement x="315" y="14" width="198" height="20" uuid="3d4e1e76-6aa6-4776-8c37-d7ba82af2790"/>
+				<textElement textAlignment="Justified">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA RESERVASI]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="134" height="20" uuid="05de9351-0b29-43bc-84bb-75f6caf10167"/>
+				<textElement textAlignment="Justified">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[TANGGAL RESERVASI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="154" y="0" width="94" height="20" uuid="ff05eb75-0ebd-41f0-89e9-bffe122b4b56"/>
+				<textElement textAlignment="Justified">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[KODE KLIEN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="263" y="0" width="99" height="20" uuid="17eb0c64-dab3-49e8-bc60-1012aecb5090"/>
+				<textElement textAlignment="Justified">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[NAMA KLIEN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="377" y="0" width="95" height="20" uuid="88a0e5bc-3e44-4f38-8f90-20b3ca995f9e"/>
+				<textElement textAlignment="Justified">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[CATERING]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="472" y="0" width="92" height="20" uuid="ff16fbd1-7400-42bd-b485-46137f323fcb"/>
+				<textElement textAlignment="Justified">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[DEKORASI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="564" y="0" width="99" height="20" uuid="add8e26c-f6c3-4dfc-8a23-941a4ee6b45c"/>
+				<textElement textAlignment="Justified">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[MUA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="676" y="0" width="114" height="20" uuid="93399aef-1144-49e5-ab16-927704ea3f3a"/>
+				<textElement textAlignment="Justified">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[HARGA RERVASI]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="19" width="820" height="1" uuid="2085b09d-a6be-40dd-b899-8903d43b58df"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="0" width="114" height="20" uuid="6326d582-05c0-453d-80b5-85cbd6e59f41"/>
+				<textElement textAlignment="Justified">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dbtanggal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="154" y="0" width="74" height="20" uuid="46f66451-9b53-4bd4-85fa-12cc90174179"/>
+				<textElement textAlignment="Justified">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dbkodeksm}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="263" y="0" width="114" height="20" uuid="dacc85b8-1d57-4eae-baee-7d2c1720fce8"/>
+				<textElement textAlignment="Justified">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dbnamaksm}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="377" y="0" width="95" height="20" uuid="7d9d5462-1c42-4376-bae1-b5558dfd4b4d"/>
+				<textElement textAlignment="Justified">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dbcath}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="472" y="0" width="92" height="20" uuid="dd694725-e2cf-414a-bf25-f26745800a0c"/>
+				<textElement textAlignment="Justified">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dbdekor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="564" y="0" width="99" height="20" uuid="77e803a4-0e7b-480f-a4bf-6466d46b54e8"/>
+				<textElement textAlignment="Justified">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dbmua}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="676" y="0" width="114" height="20" uuid="7be58e40-61bd-475d-9519-697c2c651ae1"/>
+				<textElement textAlignment="Justified">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dbjumlah}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="99" splitType="Stretch">
+			<staticText>
+				<reportElement x="687" y="2" width="43" height="20" uuid="f050d312-98a3-4d4b-9fec-92719e8337a9"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Admin,]]></text>
+			</staticText>
+			<image>
+				<reportElement x="697" y="18" width="93" height="54" uuid="4d2c6bd4-e44e-47db-ad31-21f17aa2ac80"/>
+				<imageExpression><![CDATA["C:\\Users\\daru\\Documents\\WEDDING ORGANIZER\\WEDDING ORGANIZER\\src\\Laporan_\\ttd.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="684" y="73" width="43" height="20" uuid="124579ed-c2e2-4457-9da0-455dd2e1677f"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
